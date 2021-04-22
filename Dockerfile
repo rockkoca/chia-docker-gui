@@ -20,8 +20,11 @@ RUN git clone --branch ${BRANCH} https://github.com/Chia-Network/chia-blockchain
 && cd chia-blockchain \
 && git submodule update --init mozilla-ca \
 && chmod +x install.sh \
+&& echo "deactivate" >> install.sh \
+&& echo "exit 0" >> install.sh \
 && /usr/bin/sh ./install.sh \
 && . ./activate \
+&& chmod +x install-gui.sh \
 && echo "deactivate" >> install-gui.sh \
 && echo "exit 0" >> install-gui.sh \
 && /usr/bin/sh ./install-gui.sh
