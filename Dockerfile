@@ -23,6 +23,7 @@ RUN git clone --branch ${BRANCH} https://github.com/Chia-Network/chia-blockchain
 && /usr/bin/sh ./install.sh \
 && . ./activate \
 && echo "deactivate" >> install-gui.sh \
+&& echo "exit 0" >> install-gui.sh \
 && /usr/bin/sh ./install-gui.sh
 
 WORKDIR /chia-blockchain
