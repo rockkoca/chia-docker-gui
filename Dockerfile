@@ -13,7 +13,7 @@ ENV testnet="false"
 ENV full_node_port="null"
 ARG BRANCH=main
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y curl jq ansible tar bash ca-certificates git openssl unzip wget sudo acl build-essential python3-dev python3.8-venv python3.8-distutils apt nfs-common vim
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y curl jq ansible tar bash ca-certificates git openssl unzip wget sudo acl build-essential python3-dev apt nfs-common vim
 
 RUN echo "cloning ${BRANCH}"
 RUN git clone --branch ${BRANCH} https://github.com/Chia-Network/chia-blockchain.git \
